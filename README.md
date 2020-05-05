@@ -69,3 +69,8 @@ body: Card(
   ),
 ));
 ```
+**[View document in Syncfusion Flutter Knowledge base](https://www.syncfusion.com/kb/11307/how-to-customize-the-month-cell-of-the-flutter-date-range-picker-sfdaterangepicker)**
+
+**Screenshot**
+
+![Customization](http://www.syncfusion.com/uploads/user/kb/flut/flut-858/flut-858_img1.png)
