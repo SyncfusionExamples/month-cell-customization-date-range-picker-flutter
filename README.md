@@ -73,4 +73,4 @@ body: Card(
 
 **Screenshot**
 
-<img alt="Customization"  src="http://www.syncfusion.com/uploads/user/kb/flut/flut-858/flut-858_img1.png" width="250" height="250" />|
+<img alt="Customization"  src="http://www.syncfusion.com/uploads/user/kb/flut/flut-858/flut-858_img1.png" width="250" height="400" />|
