@@ -23,26 +23,18 @@ class MonthCellCustomization extends StatefulWidget {
 }
 
 class _MonthCellCustomizationState extends State<MonthCellCustomization> {
-  DateRangePickerController _controller;
-  List<DateTime> _blackoutDates;
-  List<DateTime> _specialDates;
-  Color weekEndColor,
-      specialDatesColor,
-      todayColor,
-      leadingTrailingDatesColor,
-      blackoutDatesColor;
+  late List<DateTime> _blackoutDates;
+  late List<DateTime> _specialDates;
+  final Color weekEndColor = Color(0xFF0e9aa7),
+      specialDatesColor = Color(0xFFf6cd61),
+      todayColor = Color(0xFFff6f69),
+      leadingTrailingDatesColor = Color(0xFF88d8b0),
+      blackoutDatesColor = Colors.black;
 
   @override
   void initState() {
-    // TODO: implement initState
-    _controller = DateRangePickerController();
     _blackoutDates = _getBlackoutDates();
     _specialDates = _getSpecialDates();
-    weekEndColor = Color(0xFF0e9aa7);
-    leadingTrailingDatesColor = Color(0xFF88d8b0);
-    specialDatesColor = Color(0xFFf6cd61);
-    todayColor = Color(0xFFff6f69);
-    blackoutDatesColor = Colors.black;
     super.initState();
   }
 
@@ -57,6 +49,7 @@ class _MonthCellCustomizationState extends State<MonthCellCustomization> {
             specialDates: _specialDates,
             showTrailingAndLeadingDates: true,
             blackoutDates: _blackoutDates),
+        selectionColor: Color(0xFFf8dbdff),
         monthCellStyle: DateRangePickerMonthCellStyle(
             blackoutDateTextStyle: TextStyle(
                 color: blackoutDatesColor,
@@ -67,7 +60,6 @@ class _MonthCellCustomizationState extends State<MonthCellCustomization> {
                 color: specialDatesColor),
             specialDatesTextStyle: TextStyle(color: Colors.black),
             cellDecoration: BoxDecoration(shape: BoxShape.circle),
-            selectionColor: Color(0xFFf8dbdff),
             todayTextStyle: TextStyle(color: Colors.white),
             todayCellDecoration:
                 BoxDecoration(shape: BoxShape.circle, color: todayColor),
