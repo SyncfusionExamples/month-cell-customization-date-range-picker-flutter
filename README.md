@@ -3,29 +3,21 @@
 In the flutter date range picker, you can customize the month cells by using the `specialDates`, `blackoutDates`, and `showTrailingAndLeadingDates` properties.
 
 ## Step 1:
-In initState(), set the default dates for special, blackout dates, and set the default color values for the weekend days, special dates, current date, blackout dates, leading and trailing dates.
+Inside the state, set the default color values for the weekend days, special dates, current date, blackout dates, leading and trailing dates and initialize the special and blackout dates on initState().
 
 ```xml
-DateRangePickerController _controller;
-List<DateTime> _blackoutDates;
-List<DateTime> _specialDates;
-Color weekEndColor,
-    specialDatesColor,
-    todayColor,
-    leadingTrailingDatesColor,
-    blackoutDatesColor;
- 
+late List<DateTime> _blackoutDates;
+late List<DateTime> _specialDates;
+final Color weekEndColor = Color(0xFF0e9aa7),
+    specialDatesColor = Color(0xFFf6cd61),
+    todayColor = Color(0xFFff6f69),
+    leadingTrailingDatesColor = Color(0xFF88d8b0),
+    blackoutDatesColor = Colors.black;
+
 @override
 void initState() {
-  // TODO: implement initState
-  _controller = DateRangePickerController();
   _blackoutDates = _getBlackoutDates();
   _specialDates = _getSpecialDates();
-  weekEndColor = Color(0xFF0e9aa7);
-  leadingTrailingDatesColor = Color(0xFF88d8b0);
-  specialDatesColor = Color(0xFFf6cd61);
-  todayColor = Color(0xFFff6f69);
-  blackoutDatesColor = Colors.black;
   super.initState();
 }
 ```
@@ -43,6 +35,7 @@ body: Card(
         specialDates: _specialDates,
         showTrailingAndLeadingDates: true,
         blackoutDates: _blackoutDates),
+    selectionColor: Color(0xFFf8dbdff),
     monthCellStyle: DateRangePickerMonthCellStyle(
         blackoutDateTextStyle: TextStyle(
             color: blackoutDatesColor,
@@ -53,7 +46,6 @@ body: Card(
             color: specialDatesColor),
         specialDatesTextStyle: TextStyle(color: Colors.black),
         cellDecoration: BoxDecoration(shape: BoxShape.circle),
-        selectionColor: Color(0xFFf8dbdff),
         todayTextStyle: TextStyle(color: Colors.white),
         todayCellDecoration:
             BoxDecoration(shape: BoxShape.circle, color: todayColor),
